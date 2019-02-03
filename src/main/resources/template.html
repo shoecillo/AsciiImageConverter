@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>##TITLE##</title>
+    <style>
+        textarea {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding-top: 10px;
+        }
+        .btn{
+            background-color:#87CEFA;
+            color: black;
+            border-radius: 4px;
+            font-size:20px;
+            padding: 6px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+
+<body style="background-color: black; color: white;">
+    <div class="btn" onclick="magic(0);">&minus;</div>
+    ZOOM
+    <div class="btn" onclick="magic(1);">+</div>
+    <img src="data:image/png;base64,##B64##" style="position:absolute;right:10px;top:50px;">
+    <textarea id="txtContent" rows="1000" style="font-size: 16px;" readonly="readonly">##BODY##</textarea>
+    <script type="text/javascript">
+
+        var txtSize = "";
+
+        function magic(op) {
+            var el = document.getElementById("txtContent");
+            txtSize =  el.style.fontSize;
+            txtSize = txtSize.substring(0,txtSize.length -2);
+            txtSize = Number.parseInt(txtSize);
+            if(op==0 && txtSize>4){
+                txtSize =  txtSize -2;
+            }else if(op==1 && txtSize<20) {
+                txtSize =  txtSize +2;
+            }
+            el.style.fontSize = txtSize+"px";
+            
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
