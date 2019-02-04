@@ -152,7 +152,7 @@ public class WinAsciiConverter extends Shell implements Observer  {
 	private void browseFile() {
 		
 		FileDialog dlg = new FileDialog(getShell(), SWT.OPEN);
-		String[] ext = {"*.png","*.jpg","*.gif"};
+		String[] ext = {"*.png;*.jpg;*.gif"};
 		dlg.setFilterExtensions(ext);
 		String resp = dlg.open();
 		if(resp != null) {
